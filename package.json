@@ -1,0 +1,51 @@
+{
+    "name": "multi-cli-starter",
+    "description": "A starter project for multi command CLI using nodejs",
+    "version": "0.0.0",
+    "author": "Kedar Kolhatkar",
+    "bin": {
+        "multi-cli-starter": "./bin/run"
+    },
+    "bugs": "https://github.com/kedarkolhatkar/multi-cli-starter/issues",
+    "dependencies": {
+        "@oclif/command": "^1.8.0",
+        "@oclif/config": "^1.17.0",
+        "@oclif/plugin-help": "^3.2.1"
+    },
+    "devDependencies": {
+        "@oclif/dev-cli": "^1.26.0",
+        "globby": "^10.0.2",
+        "prettier": "^2.2.1"
+    },
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "files": [
+        "/bin",
+        "/npm-shrinkwrap.json",
+        "/oclif.manifest.json",
+        "/src"
+    ],
+    "homepage": "https://github.com/kedarkolhatkar/multi-cli-starter",
+    "keywords": [
+        "oclif"
+    ],
+    "license": "MIT",
+    "main": "src/index.js",
+    "oclif": {
+        "commands": "./src/commands",
+        "bin": "multi-cli-starter",
+        "plugins": [
+            "@oclif/plugin-help"
+        ]
+    },
+    "repository": "kedarkolhatkar/multi-cli-starter",
+    "scripts": {
+        "postpack": "rm -f oclif.manifest.json",
+        "prepack": "oclif-dev manifest && oclif-dev readme",
+        "test": "echo NO TESTS",
+        "version": "oclif-dev readme && git add README.md",
+        "prettier:fix": "prettier --write '{src,test}/**/*.{js,json,md,ts,yaml,yml}' './*.{js,json,md,ts,yml,yaml}'",
+        "prettier": "prettier --check '{src,test}/**/*.{js,json,md,ts,yaml,yml}' './*.{js,json,md,ts,yml,yaml}'"
+    }
+}
